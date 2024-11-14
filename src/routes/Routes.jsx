@@ -106,8 +106,8 @@ const router = createBrowserRouter([
       {
         path: "manage-testimonial",
         element: <ManageTestimonial></ManageTestimonial>
-      }
-
+      },
+      
     ]
   }
 ]);
