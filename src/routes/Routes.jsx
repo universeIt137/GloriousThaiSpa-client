@@ -10,8 +10,20 @@ import GalleryPage from '../pages/clientSide/galleryPage/GalleryPage';
 import Packages from '../pages/clientSide/packagePage/Packages';
 import PackageDetails from '../pages/clientSide/packagePage/PackageDetails';
 import AddPackagePage from '../pages/adminSide/packageRelatedPages/AddPackagePage';
+import MainLayoutTow from '../layoutTow/MainLayoutTow';
+import HomePageTow from '../pages/clientSide/home-page-tow/HomePageTow';
 
 const router = createBrowserRouter([
+  {
+    path : "/update",
+    element : <MainLayoutTow></MainLayoutTow>,
+    children : [
+      {
+        path : "",
+        element : <HomePageTow></HomePageTow>
+      }
+    ]
+  },
   {
     path: "/",
     element: <MainLayout></MainLayout>,
