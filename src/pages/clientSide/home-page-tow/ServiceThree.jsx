@@ -32,7 +32,7 @@ const ServiceThree = () => {
         <div
             className="min-h-screen bg-cover bg-center text-white px-6 py-10"
             style={{
-                backgroundImage: "url('https://res.cloudinary.com/dnvmj9pvk/image/upload/v1730876761/11.%20SPA-Center/HomePage/g04w8p5ifiyd4of6kbya.png')", // Replace with your background image URL
+                backgroundImage: "url('https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732603931/spa-8_w0lrs3.png')", // Replace with your background image URL
             }}
         >
             {/* Section Heading */}
@@ -42,7 +42,7 @@ const ServiceThree = () => {
                     <h1 className="text-4xl font-bold text-yellow-400">
                         Unwind and Renew Your Body and Mind with Our Best Packages
                     </h1>
-                    <p className="text-lg text-gray-200">
+                    <p className="text-lg text-gray-200 text-justify ">
                         Indulge in the ultimate relaxation and wellness experience with our
                         exceptional spa services in Dhaka. At Pure Body Spa BD, we offer a
                         comprehensive range of treatments that cater to your every need.
