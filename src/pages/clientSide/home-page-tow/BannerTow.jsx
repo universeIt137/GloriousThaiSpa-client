@@ -58,24 +58,24 @@ const BannerTow = () => {
     }, [currentIndex]);
 
     return (
-        <div className="relative w-full text-white md:h-screen">
+        <div className="relative w-full text-white lg:h-screen">
             {carouselItems.length > 0 && (
                 <div
-                    className="relative py-8 md:py-0 w-full h-full flex items-center justify-center bg-cover bg-center transition-all duration-500"
+                    className="relative py-8 lg:py-0 w-full h-full flex items-center justify-center bg-cover bg-center transition-all duration-500"
                     style={{ backgroundImage: `url(${carouselItems[currentIndex]?.image})` }}
                 >
                     {/* Overlay */}
                     <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
                     {/* Content */}
-                    <div className="relative z-10 w-11/12 max-w-7xl mx-auto px-4 md:px-8 text-center md:text-left flex flex-col md:flex-row items-center gap-6">
+                    <div className="relative   z-10 w-11/12 max-w-7xl mx-auto  text-center lg:text-left flex flex-col lg:flex-row items-center gap-x-16 lg:-mt-20 ">
                         {/* Left Content */}
-                        <div className="w-full md:w-1/2">
+                        <div className="w-full lg:w-1/2  ">
                             <h2 className="text-sm uppercase tracking-wide mb-2">Welcome to</h2>
-                            <h1 className="text-3xl md:text-5xl  font-bold mb-4 leading-snug">
+                            <h1 className="lg:text-5xl  font-bold lg:mb-4 leading-snug">
                                 Best Spa in Dhaka Gulshan  Banani
                             </h1>
-                            <p className="text-base md:text-lg text-justify leading-relaxed mb-6">
+                            <p className="text-base lg:text-lg text-justify leading-relaxed mb-6">
                                 Before we talk about Spa in Gulshan, welcome to Pure Body Spa BD,
                                 your haven of tranquility and rejuvenation. Indulge in a world of
                                 ultimate relaxation as our skilled therapists guide you on a journey
@@ -99,7 +99,7 @@ const BannerTow = () => {
                         </div>
 
                         {/* Right Image */}
-                        <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+                        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
                             <div className="  overflow-hidden shadow-lg">
                                 <img
                                     src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732601830/spa-6-removebg-preview_eoxwit.png"
