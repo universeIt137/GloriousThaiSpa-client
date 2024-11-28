@@ -32,7 +32,8 @@ const ServiceThree = () => {
         <div
             className="min-h-screen bg-cover bg-center text-white px-6 py-10"
             style={{
-                backgroundImage: "url('https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732603931/spa-8_w0lrs3.png')", // Replace with your background image URL
+                height  : "80vh",
+                backgroundImage: "url('https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732622206/new1_sezynp.png')", // Replace with your background image URL
             }}
         >
             {/* Section Heading */}
