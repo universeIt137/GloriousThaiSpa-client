@@ -61,11 +61,11 @@ const BannerTow = () => {
         <div className="relative w-full text-white lg:h-screen">
             {carouselItems.length > 0 && (
                 <div
-                    className="relative py-8 lg:py-0 w-full h-full flex items-center justify-center bg-cover bg-center transition-all duration-500"
+                    className="relative py-8 lg:py-0 w-full h-[100vh] flex items-center justify-center bg-cover bg-center transition-all duration-500"
                     style={{ backgroundImage: `url(${carouselItems[currentIndex]?.image})` }}
                 >
                     {/* Overlay */}
-                    <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+                    {/* <div className="absolute inset-0 bg-black bg-opacity-50"></div> */}
 
                     {/* Content */}
                     <div className="relative   z-10 w-11/12 max-w-7xl mx-auto  text-center lg:text-left flex flex-col lg:flex-row items-center gap-x-16 lg:-mt-20 ">

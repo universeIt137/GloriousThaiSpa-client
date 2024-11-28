@@ -6,16 +6,16 @@ const SpaSection = () => {
         <div
             className="bg-cover bg-center text-white py-10 "
             style={{
-                backgroundImage: `url('https://res.cloudinary.com/dnvmj9pvk/image/upload/v1730875859/11.%20SPA-Center/HomePage/mtyiv5mpjecffpe5bmpi.jpg')`, // Replace with the actual background image URL
+                backgroundImage: `url('https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732608788/spa-9_kyll3r.png')`, // Replace with the actual background image URL
             }}
         >
-            <div className="bg-blue-900/80 py-16 px-8">
+            <div className=" py-16 px-8">
                 <div className="container w-11/12  mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between gap-8">
                     {/* Image Section */}
                     <div className="relative w-full md:w-1/2 h-64 md:h-80">
                         <div className="rounded-full overflow-hidden w-full h-full">
                             <img
-                                src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1730881369/11.%20SPA-Center/HomePage/deo7avuqrcfygeacfayn.png" // Replace with the actual image link
+                                src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732601830/spa-6-removebg-preview_eoxwit.png" // Replace with the actual image link
                                 alt="Spa Relaxation"
                                 className="object-cover rounded-full w-[400px] h-[400px] "
                             />
