@@ -19,24 +19,28 @@ import ContactUpdate from '../pages/clientSide/contact-update/ContactUpdate';
 
 const router = createBrowserRouter([
   {
-    path : "/update",
-    element : <MainLayoutTow></MainLayoutTow>,
-    children : [
+    path: "/update",
+    element: <MainLayoutTow></MainLayoutTow>,
+    children: [
       {
-        path : "",
-        element : <HomePageTow></HomePageTow>
+        path: "",
+        element: <HomePageTow></HomePageTow>
       },
       {
-        path : "services",
-        element : <ServicePage></ServicePage>
+        path: "services",
+        element: <ServicePage></ServicePage>
       },
       {
-        path : "about",
-        element : <AboutTwoPage></AboutTwoPage>
+        path: "about",
+        element: <AboutTwoPage></AboutTwoPage>
       },
       {
-        path : "contact",
-        element : <ContactUpdate></ContactUpdate>
+        path: "contact",
+        element: <ContactUpdate></ContactUpdate>
+      },
+      {
+        path: "gallery",
+        element: <GalleryPage></GalleryPage>
       }
     ]
   },
@@ -82,7 +86,7 @@ const router = createBrowserRouter([
         path: "add-package",
         element: <AddPackagePage></AddPackagePage>
       }
-      
+
     ]
   }
 ]);

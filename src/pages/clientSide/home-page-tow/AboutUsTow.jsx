@@ -8,7 +8,7 @@ const AboutUsTow = () => {
                 <section className="flex flex-col items-center justify-center py-16 px-6   rounded-lg">
                     {/* Icon */}
                     <div>
-                        <img className='w-28 mb-3 ' src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732953822/spa-banner-16_mzxjix.png" alt="" />
+                        <img className='w-28 mb-3 ' src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732445988/service-logo_nojdxj.png" alt="" />
                     </div>
                     {/* Title */}
                     <h2 className="text-4xl font-bold text-pink-500 mb-4">
