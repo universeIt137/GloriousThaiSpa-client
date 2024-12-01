@@ -4,9 +4,9 @@ import { FaGoogle, FaFacebook, FaThumbsUp } from "react-icons/fa";
 const SpaSection = () => {
     return (
         <div
-            className="bg-cover bg-center text-white py-10 "
+            className="bg-cover bg-center text-white py-5 lg:py-10 "
             style={{
-                backgroundImage: `url('https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732608788/spa-9_kyll3r.png')`, // Replace with the actual background image URL
+                backgroundImage: `url('https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732782998/spa-banner-4_ebpujd.png')`, // Replace with the actual background image URL
             }}
         >
             <div className=" py-16 px-8">
@@ -24,11 +24,11 @@ const SpaSection = () => {
 
                     {/* Text Section */}
                     <div className="w-full md:w-1/2 text-center md:text-left">
-                        <h1 className="text-3xl md:text-4xl font-bold mb-4">
+                        <h1 className="lg:text-4xl font-bold -mt-5 lg:-mt-0 lg:mb-4">
                             Best Relaxation Body Massage in Dhaka
                         </h1>
-                        <div className="w-16 h-1 bg-gray-400 mb-6 mx-auto md:mx-0"></div>
-                        <p className="text-lg text-gray-300 text-justify leading-relaxed mb-6">
+                        <div className="w-16 h-1 bg-gray-400 lg:mb-6 my-2 mx-auto md:mx-0"></div>
+                        <p className="lg:text-lg text-[10px] text-gray-300 text-justify leading-relaxed lg:mb-6">
                             Step into Pure Body Spa and embrace a world of serenity and
                             renewal. We are not just a spa – we are a destination for
                             holistic well-being, a refuge for restoration, and a space to
@@ -39,37 +39,37 @@ const SpaSection = () => {
                         </p>
 
                         {/* Statistics Section */}
-                        <div className="flex flex-wrap justify-center md:justify-start gap-6 mt-8">
+                        <div className="flex flex-wrap justify-center lg:justify-start gap-5 lg:gap-6 mt-4 lg:mt-8">
                             {/* Stat 1 */}
-                            <div className="flex items-center gap-4 bg-blue-800 p-4 rounded-lg shadow-lg">
-                                <div className="bg-blue-700 p-3 rounded-full">
-                                    <FaGoogle className="text-2xl text-pink-500" />
+                            <div className="flex items-center gap-2 lg:gap-4 bg-blue-800 lg:p-4 p-2 rounded-lg shadow-lg">
+                                <div className="bg-blue-700 lg:p-3 p-2 rounded-full">
+                                    <FaGoogle className="lg:text-2xl text-xl text-pink-500" />
                                 </div>
                                 <div>
-                                    <p className="text-2xl font-bold text-pink-500">4950</p>
-                                    <p className="text-sm text-gray-300">Appreciations</p>
+                                    <p className="lg:text-2xl text-xl font-bold text-pink-500">4950</p>
+                                    <p className="lg:text-sm  text-[12px] text-gray-300">Appreciations</p>
                                 </div>
                             </div>
 
                             {/* Stat 2 */}
-                            <div className="flex items-center gap-4 bg-blue-800 p-4 rounded-lg shadow-lg">
-                                <div className="bg-blue-700 p-3 rounded-full">
+                            <div className="flex items-center gap-2 lg:gap-4 bg-blue-800 lg:p-4 p-2 rounded-lg shadow-lg">
+                                <div className="bg-blue-700 lg:p-3 p-2 rounded-full">
                                     <FaFacebook className="text-2xl text-pink-500" />
                                 </div>
                                 <div>
-                                    <p className="text-2xl font-bold text-pink-500">2234</p>
-                                    <p className="text-sm text-gray-300">Followers</p>
+                                    <p className="lg:text-2xl text-xl font-bold text-pink-500">2234</p>
+                                    <p className="lg:text-sm  text-[12px] text-gray-300">Followers</p>
                                 </div>
                             </div>
 
                             {/* Stat 3 */}
-                            <div className="flex items-center gap-4 bg-blue-800 p-4 rounded-lg shadow-lg">
-                                <div className="bg-blue-700 p-3 rounded-full">
+                            <div className="flex items-center gap-2 lg:gap-4 bg-blue-800 lg:p-4 p-2 rounded-lg shadow-lg">
+                                <div className="bg-blue-700 lg:p-3 p-2 rounded-full">
                                     <FaThumbsUp className="text-2xl text-pink-500" />
                                 </div>
                                 <div>
-                                    <p className="text-2xl font-bold text-pink-500">4015</p>
-                                    <p className="text-sm text-gray-300">Likes</p>
+                                    <p className="lg:text-2xl text-xl font-bold text-pink-500">4015</p>
+                                    <p className="lg:text-sm  text-[12px] text-gray-300">Likes</p>
                                 </div>
                             </div>
                         </div>

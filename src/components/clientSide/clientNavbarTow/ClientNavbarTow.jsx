@@ -25,7 +25,7 @@ const ClientNavbarTow = () => {
                                         <MdLocationOn className="text-pink-600 w-5 h-5 md:w-6 md:h-6" />
                                         <div>
                                             <p className="text-sm md:text-base text-gray-800 font-medium">
-                                                House No 25, 3 Bir Uttam Mir Shawkat Sarak, Dhaka 1212
+                                                Gulshan 2 rod numbar 44
                                             </p>
                                             <p className="text-xs md:text-sm text-gray-500">
                                                 Visit Us
@@ -38,7 +38,7 @@ const ClientNavbarTow = () => {
                                         <FaPhoneAlt className="text-pink-600 w-4 h-4 md:w-5 md:h-5" />
                                         <div>
                                             <p className="text-sm md:text-base text-gray-800 font-medium">
-                                                01988650874
+                                                01312742062
                                             </p>
                                             <p className="text-xs md:text-sm text-gray-500">
                                                 Call Us
@@ -76,10 +76,10 @@ const ClientNavbarTow = () => {
                                     HOME
                                 </NavLink>
                                 <NavLink
-                                    to="/packages"
+                                    to="/services"
                                     className="text-white font-medium hover:bg-pink-600 px-3 py-2 rounded-md transition"
                                 >
-                                    Packages
+                                    Services
                                 </NavLink>
                                 <NavLink
                                     to="/about"
