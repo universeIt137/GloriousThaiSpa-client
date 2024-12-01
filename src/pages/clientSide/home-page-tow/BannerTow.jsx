@@ -4,32 +4,20 @@ import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 const carouselItems = [
     {
         id: 1,
-        image: "https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732594698/spa-1_ky88nl.jpg",
+        image: "https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732953824/spa-banner-14_jkkkjg.png",
         heading: "adb",
         title: "afdiffsfsfff"
     },
     {
         id: 2,
-        image: "https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732594698/spa-4_aefgdn.jpg",
+        image: "https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732953824/spa-banner-15_w1pol3.png",
         heading: "adb",
         title: "afdiffsfsfff"
     },
     {
         id: 3,
-        image: "https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732594698/spa-2_krve8e.jpg",
+        image: "https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732953824/spa-banner-11_jy7ic7.png",
         heading: "adb"
-    },
-    {
-        id: 4,
-        image: "https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732594698/spa-3_rex1b0.jpg",
-        heading: "adb",
-        title: "afdiffsfsfff"
-    },
-    {
-        id: 5,
-        image: "https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732594697/spa-5_ygjspe.jpg",
-        heading: "adb",
-        title: "afdiffsfsfff"
     },
 ];
 
@@ -100,11 +88,11 @@ const BannerTow = () => {
 
                         {/* Right Image */}
                         <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
-                            <div className="  overflow-hidden shadow-lg">
+                            <div className="  overflow-hidden ">
                                 <img
                                     src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732601830/spa-6-removebg-preview_eoxwit.png"
                                     alt="Spa treatment"
-                                    className=" object-cover"
+                                    className=" object-cover w-[75%] hidden lg:block "
                                 />
                             </div>
                         </div>

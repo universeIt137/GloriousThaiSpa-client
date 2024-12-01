@@ -12,17 +12,10 @@ import PackageDetails from '../pages/clientSide/packagePage/PackageDetails';
 import AddPackagePage from '../pages/adminSide/packageRelatedPages/AddPackagePage';
 import MainLayoutTow from '../layoutTow/MainLayoutTow';
 import HomePageTow from '../pages/clientSide/home-page-tow/HomePageTow';
-import Login from '../pages/clientSide/credentialPages/Login';
-import PrivateRoutes from './PrivateRoutes';
-import Register from '../pages/clientSide/credentialPages/Register';
-import ManagePackagePage from '../pages/adminSide/packageRelatedPages/ManagePackagePage';
-import UpdatePackagePage from '../pages/adminSide/packageRelatedPages/UpdatePackagePage';
-import BookNowForm from '../pages/clientSide/bookNowPage/BookNowForm';
-import ManageBooking from '../pages/adminSide/bookingRelatedPages/ManageBooking';
-import HomePageContentForm from '../pages/adminSide/homepageRelatedPages/HomePageContentForm';
-import ManagePhotoGallery from '../pages/adminSide/photoGalleryRelatedPages/ManagePhotoGallery';
-import ManageOfficeHour from '../pages/adminSide/officeHourRelatedPages/ManageOfficeHour';
-import ManageTestimonial from '../pages/adminSide/testimonialRelatedPages/ManageTestimonial';
+import ServicePage from '../pages/clientSide/service-page/ServicePage';
+import AboutTwoPage from '../pages/clientSide/about-two/AboutTwoPage';
+import ContactTwo from '../pages/clientSide/home-page-tow/ContactTwo';
+import ContactUpdate from '../pages/clientSide/contact-update/ContactUpdate';
 
 const router = createBrowserRouter([
   {
@@ -32,6 +25,18 @@ const router = createBrowserRouter([
       {
         path : "",
         element : <HomePageTow></HomePageTow>
+      },
+      {
+        path : "services",
+        element : <ServicePage></ServicePage>
+      },
+      {
+        path : "about",
+        element : <AboutTwoPage></AboutTwoPage>
+      },
+      {
+        path : "contact",
+        element : <ContactUpdate></ContactUpdate>
       }
     ]
   },
@@ -48,7 +53,7 @@ const router = createBrowserRouter([
         element: <Packages></Packages>
       },
       {
-        path: "/package-details/:id",
+        path: "/package-details",
         element: <PackageDetails></PackageDetails>
       },
       {
@@ -62,26 +67,12 @@ const router = createBrowserRouter([
       {
         path: "/gallery",
         element: <GalleryPage></GalleryPage>
-      },
-      {
-        path: "/book-now/:id",
-        element: <BookNowForm></BookNowForm>
       }
     ]
   },
   {
-    path: "/admin-login",
-    element: <Login></Login>
-  },
-  {
-    path: "/admin-register",
-    element: <Register></Register>
-  },
-  {
     path: "/dashboard",
-    element: <PrivateRoutes>
-      <DashboardLayout></DashboardLayout>
-    </PrivateRoutes>,
+    element: <DashboardLayout></DashboardLayout>,
     children: [
       {
         path: "/dashboard",
@@ -90,35 +81,7 @@ const router = createBrowserRouter([
       {
         path: "add-package",
         element: <AddPackagePage></AddPackagePage>
-      },
-      {
-        path: "manage-package",
-        element: <ManagePackagePage></ManagePackagePage>
-      },
-      {
-        path: "update-package/:id",
-        element: <UpdatePackagePage></UpdatePackagePage>
-      },
-      {
-        path: "manage-booking",
-        element: <ManageBooking></ManageBooking>
-      },
-      {
-        path: "manage-content",
-        element: <HomePageContentForm></HomePageContentForm>
-      },
-      {
-        path: "manage-gallery",
-        element: <ManagePhotoGallery></ManagePhotoGallery>
-      },
-      {
-        path: "manage-office-hour",
-        element: <ManageOfficeHour></ManageOfficeHour>
-      },
-      {
-        path: "manage-testimonial",
-        element: <ManageTestimonial></ManageTestimonial>
-      },
+      }
       
     ]
   }
