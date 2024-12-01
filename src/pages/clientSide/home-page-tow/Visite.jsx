@@ -1,7 +1,19 @@
+import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { FaCheck } from 'react-icons/fa6';
+import useAxiosPublic from '../../../hooks/useAxiosPublic';
 
 const Visite = () => {
+    const axiosPublic = useAxiosPublic();
+
+    // Fetch packages using React Query
+    const { data: officeHour = [], isLoading, isError } = useQuery({
+        queryKey: ["officeHour"],
+        queryFn: async () => {
+            const res = await axiosPublic.get("office-hour");
+            return res.data;
+        },
+    });
     return (
         <div className="my-12 bg-[url('https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732782998/spa-banner-4_ebpujd.png')] bg-cover bg-center bg-no-repeat min-h-screen">
             <div>
@@ -48,30 +60,18 @@ const Visite = () => {
                                 </div>
                                 {/* Days and Timings */}
                                 <div className="lg:p-4 p-3 space-y-4  ">
-                                    <div className="flex justify-between items-center bg-white  text-black rounded-lg lg:p-6 p-3 shadow-md">
-                                        <span className="lg:text-xl text-[11px] font-semibold ">Saturday</span>
-                                        <span className="lg:text-xl text-[11px] font-semibold ">10:00AM - 10:00PM</span>
-                                    </div>
-                                    <div className="flex justify-between items-center bg-white  text-black rounded-lg lg:p-6 p-3 shadow-md">
-                                        <span className="lg:text-xl text-[11px] font-semibold ">Sunday</span>
-                                        <span className="lg:text-xl text-[11px] font-semibold ">10:00AM - 10:00PM</span>
-                                    </div>
-                                    <div className="flex justify-between items-center bg-white  text-black rounded-lg lg:p-6 p-3 shadow-md">
-                                        <span className="lg:text-xl text-[11px] font-semibold ">Monday</span>
-                                        <span className="lg:text-xl text-[11px] font-semibold ">10:00AM - 10:00PM</span>
-                                    </div>
-                                    <div className="flex justify-between items-center bg-white  text-black rounded-lg lg:p-6 p-3 shadow-md">
-                                        <span className="lg:text-xl text-[11px] font-semibold ">Tuesday</span>
-                                        <span className="lg:text-xl text-[11px] font-semibold ">10:00AM - 10:00PM</span>
-                                    </div>
-                                    <div className="flex justify-between items-center bg-white  text-black rounded-lg lg:p-6 p-3 shadow-md">
-                                        <span className="lg:text-xl text-[11px] font-semibold ">Wednesday</span>
-                                        <span className="lg:text-xl text-[11px] font-semibold ">10:00AM - 10:00PM</span>
-                                    </div>
-                                    <div className="flex justify-between items-center bg-white  text-black rounded-lg lg:p-6 p-3 shadow-md">
-                                        <span className="lg:text-xl text-[11px] font-semibold ">Thursday</span>
-                                        <span className="lg:text-xl text-[11px] font-semibold ">10:00AM - 10:00PM</span>
-                                    </div>
+                                    {
+                                        officeHour && officeHour?.map((item, i) => {
+                                            return (
+                                                <div key={i} >
+                                                    <div className="flex justify-between items-center bg-white  text-black rounded-lg lg:p-6 p-3 shadow-md">
+                                                        <span className="lg:text-xl text-[11px] font-semibold ">{ item?.day }</span>
+                                                        <span className="lg:text-xl text-[11px] font-semibold ">{ item?.time }</span>
+                                                    </div>
+                                                </div>
+                                            )
+                                        })
+                                    }
                                 </div>
                             </div>
                         </div>
