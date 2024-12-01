@@ -20,7 +20,6 @@ const MobileNavbar = ({name}) => {
         { path: "/packages", name: "Packages" },
         { path: "/about", name: "About" },
         { path: "/contact", name: "Contact" },
-        { path: "/gallery", name: "Gallery" }
       ];
 
     return (

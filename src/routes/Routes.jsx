@@ -10,6 +10,8 @@ import GalleryPage from '../pages/clientSide/galleryPage/GalleryPage';
 import Packages from '../pages/clientSide/packagePage/Packages';
 import PackageDetails from '../pages/clientSide/packagePage/PackageDetails';
 import AddPackagePage from '../pages/adminSide/packageRelatedPages/AddPackagePage';
+import MainLayoutTow from '../layoutTow/MainLayoutTow';
+import HomePageTow from '../pages/clientSide/home-page-tow/HomePageTow';
 import Login from '../pages/clientSide/credentialPages/Login';
 import PrivateRoutes from './PrivateRoutes';
 import Register from '../pages/clientSide/credentialPages/Register';
@@ -23,6 +25,16 @@ import ManageOfficeHour from '../pages/adminSide/officeHourRelatedPages/ManageOf
 import ManageTestimonial from '../pages/adminSide/testimonialRelatedPages/ManageTestimonial';
 
 const router = createBrowserRouter([
+  {
+    path : "/update",
+    element : <MainLayoutTow></MainLayoutTow>,
+    children : [
+      {
+        path : "",
+        element : <HomePageTow></HomePageTow>
+      }
+    ]
+  },
   {
     path: "/",
     element: <MainLayout></MainLayout>,
