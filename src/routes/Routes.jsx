@@ -16,6 +16,7 @@ import ServicePage from '../pages/clientSide/service-page/ServicePage';
 import AboutTwoPage from '../pages/clientSide/about-two/AboutTwoPage';
 import ContactTwo from '../pages/clientSide/home-page-tow/ContactTwo';
 import ContactUpdate from '../pages/clientSide/contact-update/ContactUpdate';
+import CreateBanner from './../pages/adminSide/bannerPage/CreateBanner';
 
 const router = createBrowserRouter([
   {
@@ -85,6 +86,10 @@ const router = createBrowserRouter([
       {
         path: "add-package",
         element: <AddPackagePage></AddPackagePage>
+      },
+      {
+        path : "upload-banner",
+        element : <CreateBanner></CreateBanner>
       }
 
     ]
