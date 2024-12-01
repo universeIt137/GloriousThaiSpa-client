@@ -102,7 +102,7 @@ const ClientNavbarTow = () => {
                             </div>
                             {/* Social Media Icons */}
                             <div className="flex space-x-4 text-white">
-                                <NavLink href="#" className="hover:text-pink-600">
+                                <NavLink to={`https://www.facebook.com/profile.php?id=61551431156331`} className="hover:text-pink-600">
                                     <FaFacebookF className="w-5 h-5" />
                                 </NavLink>
                                 <NavLink href="#" className="hover:text-pink-600">

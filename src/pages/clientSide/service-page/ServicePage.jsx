@@ -1,71 +1,84 @@
 import React from "react";
 import { FaStar, FaPhoneAlt } from "react-icons/fa"; // Import icons from react-icons
 import ButtonAnimation from "../../../components/clientSide/animation-button/ButtonAnimation";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
 
-const massages = [
-    {
-        title: "Dry Massage",
-        image: "https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732953824/spa-banner-15_w1pol3.png", // Replace with actual image URL
-        rating: 5.0,
-        price: [
-            { duration: "60 Minutes", cost: "4000৳" },
-            { duration: "90 Minutes", cost: "6000৳" },
-            { duration: "120 Minutes", cost: "8000৳" },
-        ],
-    },
-    {
-        title: "Nuru Massage",
-        image: "https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732953824/spa-banner-14_jkkkjg.png", // Replace with actual image URL
-        rating: 5.0,
-        price: [
-            { duration: "60 Minutes", cost: "8000৳" },
-            { duration: "90 Minutes", cost: "11000৳" },
-            { duration: "120 Minutes", cost: "16000৳" },
-        ],
-    },
-    {
-        title: "Back & Shoulder Massage",
-        image: "https://res.cloudinary.com/dnvmj9pvk/image/upload/v1730875859/11.%20SPA-Center/HomePage/mtyiv5mpjecffpe5bmpi.jpg", // Replace with actual image URL
-        rating: 5.0,
-        price: [
-            { duration: "60 Minutes", cost: "4000৳" },
-            { duration: "90 Minutes", cost: "6000৳" },
-            { duration: "120 Minutes", cost: "8000৳" },
-        ],
-    },
-    {
-        title: "Dry Massage",
-        image: "https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732953824/spa-banner-15_w1pol3.png", // Replace with actual image URL
-        rating: 5.0,
-        price: [
-            { duration: "60 Minutes", cost: "4000৳" },
-            { duration: "90 Minutes", cost: "6000৳" },
-            { duration: "120 Minutes", cost: "8000৳" },
-        ],
-    },
-    {
-        title: "Nuru Massage",
-        image: "https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732953824/spa-banner-14_jkkkjg.png", // Replace with actual image URL
-        rating: 5.0,
-        price: [
-            { duration: "60 Minutes", cost: "8000৳" },
-            { duration: "90 Minutes", cost: "11000৳" },
-            { duration: "120 Minutes", cost: "16000৳" },
-        ],
-    },
-    {
-        title: "Back & Shoulder Massage",
-        image: "https://res.cloudinary.com/dnvmj9pvk/image/upload/v1730875859/11.%20SPA-Center/HomePage/mtyiv5mpjecffpe5bmpi.jpg", // Replace with actual image URL
-        rating: 5.0,
-        price: [
-            { duration: "60 Minutes", cost: "4000৳" },
-            { duration: "90 Minutes", cost: "6000৳" },
-            { duration: "120 Minutes", cost: "8000৳" },
-        ],
-    },
-];
+// const massages = [
+//     {
+//         title: "Dry Massage",
+//         image: "https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732953824/spa-banner-15_w1pol3.png", // Replace with actual image URL
+//         rating: 5.0,
+//         price: [
+//             { duration: "60 Minutes", cost: "4000৳" },
+//             { duration: "90 Minutes", cost: "6000৳" },
+//             { duration: "120 Minutes", cost: "8000৳" },
+//         ],
+//     },
+//     {
+//         title: "Nuru Massage",
+//         image: "https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732953824/spa-banner-14_jkkkjg.png", // Replace with actual image URL
+//         rating: 5.0,
+//         price: [
+//             { duration: "60 Minutes", cost: "8000৳" },
+//             { duration: "90 Minutes", cost: "11000৳" },
+//             { duration: "120 Minutes", cost: "16000৳" },
+//         ],
+//     },
+//     {
+//         title: "Back & Shoulder Massage",
+//         image: "https://res.cloudinary.com/dnvmj9pvk/image/upload/v1730875859/11.%20SPA-Center/HomePage/mtyiv5mpjecffpe5bmpi.jpg", // Replace with actual image URL
+//         rating: 5.0,
+//         price: [
+//             { duration: "60 Minutes", cost: "4000৳" },
+//             { duration: "90 Minutes", cost: "6000৳" },
+//             { duration: "120 Minutes", cost: "8000৳" },
+//         ],
+//     },
+//     {
+//         title: "Dry Massage",
+//         image: "https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732953824/spa-banner-15_w1pol3.png", // Replace with actual image URL
+//         rating: 5.0,
+//         price: [
+//             { duration: "60 Minutes", cost: "4000৳" },
+//             { duration: "90 Minutes", cost: "6000৳" },
+//             { duration: "120 Minutes", cost: "8000৳" },
+//         ],
+//     },
+//     {
+//         title: "Nuru Massage",
+//         image: "https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732953824/spa-banner-14_jkkkjg.png", // Replace with actual image URL
+//         rating: 5.0,
+//         price: [
+//             { duration: "60 Minutes", cost: "8000৳" },
+//             { duration: "90 Minutes", cost: "11000৳" },
+//             { duration: "120 Minutes", cost: "16000৳" },
+//         ],
+//     },
+//     {
+//         title: "Back & Shoulder Massage",
+//         image: "https://res.cloudinary.com/dnvmj9pvk/image/upload/v1730875859/11.%20SPA-Center/HomePage/mtyiv5mpjecffpe5bmpi.jpg", // Replace with actual image URL
+//         rating: 5.0,
+//         price: [
+//             { duration: "60 Minutes", cost: "4000৳" },
+//             { duration: "90 Minutes", cost: "6000৳" },
+//             { duration: "120 Minutes", cost: "8000৳" },
+//         ],
+//     },
+// ];
 
 const ServicePage = () => {
+
+    const axiosPublic = useAxiosPublic();
+
+    // Fetch packages using React Query
+    const { data: massages = [], isLoading, isError } = useQuery({
+        queryKey: ["massages"],
+        queryFn: async () => {
+            const res = await axiosPublic.get("package");
+            return res.data;
+        },
+    });
     
     return (
         <div className="w-11/12 mx-auto">
@@ -101,13 +114,13 @@ const ServicePage = () => {
                     >
                         {/* Image */}
                         <img
-                            src={massage.image}
+                            src={massage.ImageUrl}
                             alt={massage.title}
                             className="w-full h-56 object-cover"
                         />
 
                         {/* Details */}
-                        <div className="p-4 bg-gray-900 text-white">
+                        <div className="p-4 bg-[#2563EB] text-white">
                             <h3 className="text-xl font-bold text-center">{massage.title}</h3>
 
                             {/* Rating */}
@@ -128,10 +141,10 @@ const ServicePage = () => {
 
                             {/* Price List */}
                             <ul className="text-center space-y-2 my-4">
-                                {massage.price.map((item, idx) => (
-                                    <li key={idx} className="flex justify-between">
-                                        <span>{item.duration}</span>
-                                        <span>{item.cost}</span>
+                                {massage.durations.map((item, idx) => (
+                                    <li key={idx} className="flex items-center justify-between font-bold text-lg ">
+                                        <span>{item.time} Minutes </span>
+                                        <span className="flex justify-between items-center gap-2 " >{item.price} <img className="w-4  " src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1733050653/taka_drhiqj.png" alt="" /> </span>
                                     </li>
                                 ))}
                             </ul>

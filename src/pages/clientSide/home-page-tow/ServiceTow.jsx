@@ -6,7 +6,7 @@ const ServiceTow = () => {
             <div className="min-h-screen flex flex-col items-center justify-center bg-white px-4">
                 {/* Icon and Heading */}
                 <div className="text-center lg:mb-8">
-                    <img className='w-[75%] ' src="hhttps://res.cloudinary.com/dnvmj9pvk/image/upload/v1732953822/spa-banner-16_mzxjix.png" alt="" />
+                    <img className='w-[75%] ' src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732445988/service-logo_nojdxj.png" alt="" />
                     {/* Title */}
                     <h1 className="lg:text-4xl text-[17px] lg:mt-6 mt-3 font-bold text-pink-600">
                         Our <span className="text-blue-600">Services!</span>
