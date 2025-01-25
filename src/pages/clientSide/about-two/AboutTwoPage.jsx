@@ -11,7 +11,6 @@ import Visite from '../home-page-tow/Visite';
 const AboutTwoPage = () => {
     return (
         <div>
-            <h1>AboutTwoPage</h1>
             <AboutUsTow></AboutUsTow>
             <BodyMessage></BodyMessage>
             <WhyChooseUs></WhyChooseUs>

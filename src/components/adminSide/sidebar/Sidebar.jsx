@@ -59,7 +59,7 @@ const Sidebar = () => {
 
             <NavigationItem to="/dashboard/manage-office-hour" icon={SiNginxproxymanager} label="Manage Office Hours" />
         </>
-    
+
     const testimonialsUrls =
         <>
 
@@ -67,61 +67,40 @@ const Sidebar = () => {
         </>
 
 
-    const blogUrls =
+    const bannerUrls =
         <>
-            <NavigationItem to="/dashboard/addBlog" icon={MdAddCircle} label="Add Blog" />
-            <NavigationItem to="/dashboard/manageBlog" icon={SiNginxproxymanager} label="Manage Blogs" />
-        </>
-    const comments =
-        <>
-            <NavigationItem to="/dashboard/manageComments" icon={FaRegComments} label="Manage Comments" />
+            <NavigationItem to="/dashboard/upload-banner" icon={MdAddCircle} label="Upload Banner" />
+            <NavigationItem to="/dashboard/manage-banner" icon={SiNginxproxymanager} label="Manage Banner" />
         </>
 
-    const homepageUrls =
+    const sliderPackagesUrl =
         <>
-            <NavigationItem to="/dashboard/manageHomepageContent" icon={SiNginxproxymanager} label="Manage Homepage Content" />
-            <NavigationItem to="/dashboard/manageCountDown" icon={SiNginxproxymanager} label="Manage CountDown" />
+            <NavigationItem to="/dashboard/upload-packages-slider" icon={MdAddCircle} label="Upload Packages Slider" />
+            <NavigationItem to="/dashboard/manage-packages-slider" icon={MdAddCircle} label="Manage Packages Slider" />
         </>
 
-    const facultyUrls =
+    const contact =
         <>
-            <NavigationItem to="/dashboard/addFaculty" icon={MdAddCircle} label="Add Faculty" />
-            <NavigationItem to="/dashboard/manageFaculty" icon={SiNginxproxymanager} label="Manage Faculty" />
+            <NavigationItem to="/dashboard/contact-list" icon={MdAddCircle} label="Contact list" />
         </>
 
-    const testimonialUrls =
+    const chooseUs =
         <>
-            <NavigationItem to="/dashboard/addTestimonial" icon={MdAddCircle} label="Add Testimonial" />
-            <NavigationItem to="/dashboard/manageTestimonial" icon={SiNginxproxymanager} label="Manage Testimonial" />
-        </>
-
-    const studentGallaryUrls =
-        <>
-            <NavigationItem to="/dashboard/manageStudentGallary" icon={SiNginxproxymanager} label="Manage Student Gallary" />
-        </>
-
-    const requestUrls =
-        <>
-            <NavigationItem to="/dashboard/admissionRequest" icon={FaFileWaveform} label="Admission Requests" />
-            <NavigationItem to="/dashboard/seminar" icon={FaUsers} label="Seminar Requests" />
-        </>
-
-    const seminarUrls =
-        <>
-            <NavigationItem to="/dashboard/createSeminar" icon={MdAddCircle} label="Create Seminar" />
-            <NavigationItem to="/dashboard/manageSeminar" icon={SiNginxproxymanager} label="Manage Seminar" />
+            <NavigationItem to="/dashboard/choose-us-upload" icon={MdAddCircle} label="Choose Us Upload" />
+            <NavigationItem to="/dashboard/choose-us-list" icon={MdAddCircle} label="Choose Us list" />
         </>
 
 
     return (
         <>
             <aside
-                className={`bg-gradient-to-b from-indigo-600 to-[#E94192] text-white transition-all duration-300 ${isSidebarOpen ? 'w-72' : 'w-14'
+                className={`bg-gradient-to-b from-indigo-600 to-[#E94192] text-white transition-all min-h-screen duration-300 ${isSidebarOpen ? 'w-72' : 'w-14'
                     }`}
             >
                 <div className="flex justify-between items-center p-4 gap-8">
                     <div className={`text-2xl font-bold ${!isSidebarOpen && 'hidden'}`}>
-                        <Link to={'/'}>Glorious Thai Spa</Link>
+                        <Link to={'/'}>Smart Beauty Body Spa
+                        </Link>
                     </div>
                     <button
                         onClick={toggleSidebar}
@@ -139,6 +118,13 @@ const Sidebar = () => {
                             icon={GrDashboard}
                             label="Dashboard"
                         />
+                        <li className="mb-4 mx-3">
+                            <Dropdown buttonText="Banner" urls={bannerUrls} />
+                        </li>
+
+                        <li className="mb-4 mx-3">
+                            <Dropdown buttonText="Packages Slider" urls={sliderPackagesUrl} />
+                        </li>
 
                         <li className="mb-4 mx-3">
                             <Dropdown buttonText="Packages" urls={packageUrls} />
@@ -164,8 +150,16 @@ const Sidebar = () => {
                             <Dropdown buttonText="Testimonial" urls={testimonialsUrls} />
                         </li>
 
-                        
-                        
+                        <li className="mb-4 mx-3">
+                            <Dropdown buttonText="Contact" urls={contact} />
+                        </li>
+
+                        <li className="mb-4 mx-3">
+                            <Dropdown buttonText="Why Choose Us" urls={chooseUs} />
+                        </li>
+
+
+
 
                         <li className="mb-4 mx-3">
                             <button onClick={() => signOut(auth)} className=' px-5 py-2 rounded-lg flex gap-1 items-center hover:bg-gray-200 hover:border-transparent transition-all duration-300 active:scale-90'> Log Out <MdLogout /></button>

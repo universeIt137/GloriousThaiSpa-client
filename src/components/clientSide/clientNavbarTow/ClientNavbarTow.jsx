@@ -73,13 +73,13 @@ const ClientNavbarTow = () => {
                                     to="/"
                                     className="text-white font-medium hover:bg-pink-600 px-3 py-2 rounded-md transition"
                                 >
-                                    HOME
+                                    Home
                                 </NavLink>
                                 <NavLink
-                                    to="/services"
+                                    to="/packages"
                                     className="text-white font-medium hover:bg-pink-600 px-3 py-2 rounded-md transition"
                                 >
-                                    Services
+                                    Packages
                                 </NavLink>
                                 <NavLink
                                     to="/about"
@@ -88,13 +88,13 @@ const ClientNavbarTow = () => {
                                     About
                                 </NavLink>
                                 <NavLink
-                                    href="/contact"
+                                    to="/contact"
                                     className="text-white font-medium hover:bg-pink-600 px-3 py-2 rounded-md transition"
                                 >
                                     Contact
                                 </NavLink>
                                 <NavLink
-                                    href="/gallery"
+                                    to="/gallery"
                                     className="text-white font-medium hover:bg-pink-600 px-3 py-2 rounded-md transition"
                                 >
                                     Gallery

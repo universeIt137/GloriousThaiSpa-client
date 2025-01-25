@@ -54,9 +54,10 @@ const PhotoGallery = () => {
         <div className="">
 
             <div className="py-4">
-                <h2 className="text-4xl mb-5 font-extrabold uppercase text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-yellow-500 to-blue-500 text-center">
+                {/* <h2 className="text-4xl mb-5 font-extrabold uppercase text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-yellow-500 to-blue-500 text-center">
                     <img src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1730892795/11.%20SPA-Center/HomePage/qv9h3t2xuk70vmi9x786.png" alt="" className='mx-auto' />
-                </h2>
+                </h2> */}
+                <h1 className='text-center text-4xl lg:text-4xl font-bold text-[#EC4899] ' >Our <span className='text-[#2563EB]' >Gallery</span> </h1>
             </div>
 
             <div className="gallery-container grid grid-cols-2 lg:grid-cols-4 gap-4 p-4 w-10/12 mx-auto">

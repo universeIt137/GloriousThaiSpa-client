@@ -65,8 +65,8 @@ const Visite = () => {
                                             return (
                                                 <div key={i} >
                                                     <div className="flex justify-between items-center bg-white  text-black rounded-lg lg:p-6 p-3 shadow-md">
-                                                        <span className="lg:text-xl text-[11px] font-semibold ">{ item?.day }</span>
-                                                        <span className="lg:text-xl text-[11px] font-semibold ">{ item?.time }</span>
+                                                        <span className="lg:text-xl text-[11px] font-semibold ">{item?.day}</span>
+                                                        <span className="lg:text-xl text-[11px] font-semibold ">{item?.time}</span>
                                                     </div>
                                                 </div>
                                             )

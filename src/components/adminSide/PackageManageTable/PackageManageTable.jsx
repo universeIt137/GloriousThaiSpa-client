@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import useAxiosPublic from '../../../../hooks/useAxiosPublic';
-import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
+import useAxiosPublic from '../../../hooks/useAxiosPublic';
 
 const PackageManageTable = ({ packages }) => {
 

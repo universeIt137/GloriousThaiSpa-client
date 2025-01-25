@@ -80,9 +80,9 @@ const Testimonials = () => {
 
     return (
         <>
-        <h2 className="text-4xl font-extrabold uppercase text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-yellow-500 to-blue-500 text-center">
-                <img src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1730894381/11.%20SPA-Center/HomePage/a1pubuieou7mmkdmbro6.png" alt="" className='mx-auto' />
-            </h2>
+        
+
+            <h1 className='text-center text-4xl text-[#EC4899] font-bold ' >Our Clients <span className='text-[#2563EB]' >Reviews</span> </h1>
 
             <div
             className="overflow-x-auto w-10/12 mx-auto p-6 cursor-grab"

@@ -64,7 +64,7 @@ const AddPackagePage = () => {
                 }
             })
             .catch()
-        
+
 
         setLoading(false);  // End loading state
     };

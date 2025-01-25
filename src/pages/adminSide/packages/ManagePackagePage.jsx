@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import useAxiosPublic from '../../../hooks/useAxiosPublic';
-import PackageManageTable from './components/PackageManageTable';
 import { Helmet } from 'react-helmet-async';
+import PackageManageTable from '../../../components/adminSide/PackageManageTable/PackageManageTable';
 
 const ManagePackagePage = () => {
 
