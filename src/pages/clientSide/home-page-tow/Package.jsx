@@ -70,7 +70,7 @@ const Package = () => {
             }}
         >
             <div className="w-11/12 mx-auto">
-                <h1 className="text-white z-30 text-center lg:text-xl font-bold py-6 lg:py-8">
+                <h1 className="text-black z-30 text-center lg:text-xl font-bold py-6 lg:py-8">
                     Let's Choose Your Desire Package
                 </h1>
                 <div className="relative flex items-center">

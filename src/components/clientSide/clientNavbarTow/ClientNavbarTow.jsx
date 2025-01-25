@@ -25,7 +25,7 @@ const ClientNavbarTow = () => {
                                         <MdLocationOn className="text-pink-600 w-5 h-5 md:w-6 md:h-6" />
                                         <div>
                                             <p className="text-sm md:text-base text-gray-800 font-medium">
-                                                Gulshan 2 rod numbar 44
+                                                Gulshan 1 Avenu, Road Number 34, UCB Bank
                                             </p>
                                             <p className="text-xs md:text-sm text-gray-500">
                                                 Visit Us
@@ -38,7 +38,7 @@ const ClientNavbarTow = () => {
                                         <FaPhoneAlt className="text-pink-600 w-4 h-4 md:w-5 md:h-5" />
                                         <div>
                                             <p className="text-sm md:text-base text-gray-800 font-medium">
-                                                01312742062
+                                                01710681347
                                             </p>
                                             <p className="text-xs md:text-sm text-gray-500">
                                                 Call Us
@@ -51,7 +51,7 @@ const ClientNavbarTow = () => {
                                         <MdAccessTime className="text-pink-600 w-5 h-5 md:w-6 md:h-6" />
                                         <div>
                                             <p className="text-sm md:text-base text-gray-800 font-medium">
-                                                Sat - Fri: 10am-10pm
+                                                Sat - Fri: (24 Hours)
                                             </p>
                                             <p className="text-xs md:text-sm text-gray-500">
                                                 Open

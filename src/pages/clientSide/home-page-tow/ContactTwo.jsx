@@ -33,7 +33,7 @@ const ContactTwo = () => {
                     </div>
                     <div className="p-4">
                         <h2 className="text-lg font-bold">Call Us</h2>
-                        <p className="text-sm">01606521176</p>
+                        <p className="text-sm">01710681347</p>
                     </div>
                 </div>
 
@@ -44,7 +44,7 @@ const ContactTwo = () => {
                     </div>
                     <div className="p-4">
                         <h2 className="text-lg font-bold">Address</h2>
-                        <p className="text-sm">Gulshan 2, Road Number 44</p>
+                        <p className="text-sm">Gulshan 1 Avenu, Road Number 34, UCB Bank</p>
                     </div>
                 </div>
             </div>

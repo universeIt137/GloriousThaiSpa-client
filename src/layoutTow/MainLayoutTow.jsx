@@ -10,8 +10,6 @@ const MainLayoutTow = () => {
         <div>
             <ClientNavbarTow></ClientNavbarTow>
             <MobileNavbar ></MobileNavbar>
-
-
             <Outlet></Outlet>
             <Footer></Footer>
             <FloatingBtn ></FloatingBtn>
