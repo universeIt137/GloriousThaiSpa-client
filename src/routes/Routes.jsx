@@ -28,6 +28,7 @@ import ManagePackagePage from '../pages/adminSide/packages/ManagePackagePage';
 import UpdatePackagePage from '../pages/adminSide/packages/UpdatePackagePage';
 import ManageBooking from '../pages/adminSide/booking/ManageBooking';
 import HomePageContentForm from '../pages/adminSide/home-page-content/HomePageContentForm';
+import RegistrationForm from '../pages/clientSide/login-register/RegisterFrom';
 
 const router = createBrowserRouter([
   {
@@ -65,8 +66,14 @@ const router = createBrowserRouter([
       {
         path: "/book-now/:id",
         element: <Bookingfrom></Bookingfrom>
-      }
+      },
+
     ]
+  },
+
+  {
+    path: "registration",
+    element: <RegistrationForm></RegistrationForm>
   },
   // {
   //   path: "/",
