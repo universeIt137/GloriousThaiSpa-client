@@ -93,8 +93,24 @@ const Sidebar = () => {
 
     const chooseUs =
         <>
-            <NavigationItem to="/dashboard/choose-us-upload" icon={MdAddCircle} label="Choose Us Upload" />
-            <NavigationItem to="/dashboard/choose-us-list" icon={MdAddCircle} label="Choose Us list" />
+            <NavigationItem to="/dashboard/manageStudentGallary" icon={SiNginxproxymanager} label="Manage Student Gallary" />
+        </>
+
+    const requestUrls =
+        <>
+            <NavigationItem to="/dashboard/admissionRequest" icon={FaFileWaveform} label="Admission Requests" />
+            <NavigationItem to="/dashboard/seminar" icon={FaUsers} label="Seminar Requests" />
+        </>
+
+    const seminarUrls =
+        <>
+            <NavigationItem to="/dashboard/createSeminar" icon={MdAddCircle} label="Create Seminar" />
+            <NavigationItem to="/dashboard/manageSeminar" icon={SiNginxproxymanager} label="Manage Seminar" />
+        </>
+
+    const user =
+        <>
+            <NavigationItem to="/dashboard/user-list" icon={MdAddCircle} label="Manage User" />
         </>
 
 
@@ -133,6 +149,7 @@ const Sidebar = () => {
                             <Dropdown buttonText="Packages Slider" urls={sliderPackagesUrl} />
                         </li>
 
+
                         <li className="mb-4 mx-3">
                             <Dropdown buttonText="Packages" urls={packageUrls} />
                         </li>
@@ -157,13 +174,22 @@ const Sidebar = () => {
                             <Dropdown buttonText="Testimonial" urls={testimonialsUrls} />
                         </li>
 
+
                         <li className="mb-4 mx-3">
                             <Dropdown buttonText="Contact" urls={contact} />
                         </li>
 
+
+
                         <li className="mb-4 mx-3">
                             <Dropdown buttonText="Why Choose Us" urls={chooseUs} />
                         </li>
+
+                        <li className="mb-4 mx-3">
+                            <Dropdown buttonText="Manage User" urls={user} />
+                        </li>
+
+
 
 
 

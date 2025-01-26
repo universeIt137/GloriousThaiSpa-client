@@ -31,6 +31,7 @@ import HomePageContentForm from '../pages/adminSide/home-page-content/HomePageCo
 import RegistrationForm from '../pages/clientSide/login-register/RegisterFrom';
 import LoginForm from '../pages/clientSide/login-register/LoginFrom';
 import PrivateRoute from './PrivateRouter';
+import ManageUser from '../pages/adminSide/user/ManageUser';
 
 const router = createBrowserRouter([
   {
@@ -195,6 +196,14 @@ const router = createBrowserRouter([
       {
         path: "chooseUs-update/:id",
         element: <PrivateRoute role={"admin"} ><WhyChooseUsUpdate></WhyChooseUsUpdate></PrivateRoute>
+      },
+      {
+        path : "upload-banner",
+        element : <CreateBanner></CreateBanner>
+      },
+      {
+        path: "user-list",
+        element : <PrivateRoute role={"admin"} > <ManageUser></ManageUser> </PrivateRoute>
       }
 
     ]
