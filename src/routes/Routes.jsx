@@ -30,6 +30,7 @@ import ManageBooking from '../pages/adminSide/booking/ManageBooking';
 import HomePageContentForm from '../pages/adminSide/home-page-content/HomePageContentForm';
 import RegistrationForm from '../pages/clientSide/login-register/RegisterFrom';
 import LoginForm from '../pages/clientSide/login-register/LoginFrom';
+import PrivateRoute from './PrivateRouter';
 
 const router = createBrowserRouter([
   {
@@ -116,84 +117,84 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/dashboard",
-        element: <Dashboard></Dashboard>
+        element: <PrivateRoute role={"admin"} ><Dashboard></Dashboard></PrivateRoute>
       },
       {
         path: "add-package",
-        element: <AddPackagePage></AddPackagePage>
+        element: <PrivateRoute role={"admin"} ><AddPackagePage></AddPackagePage></PrivateRoute>
       },
       {
         path: "manage-package",
-        element: <ManagePackagePage></ManagePackagePage>
+        element: <PrivateRoute role={"admin"} ><ManagePackagePage></ManagePackagePage></PrivateRoute>
       },
       {
         path: "update-package/:id",
-        element: <UpdatePackagePage></UpdatePackagePage>
+        element: <PrivateRoute role={"admin"} ><UpdatePackagePage></UpdatePackagePage></PrivateRoute>
       },
       {
         path: "manage-booking",
-        element: <ManageBooking></ManageBooking>
+        element: <PrivateRoute role={"admin"} ><ManageBooking></ManageBooking></PrivateRoute>
       },
       {
         path: "manage-content",
-        element: <HomePageContentForm></HomePageContentForm>
+        element: <PrivateRoute role={"admin"} ><HomePageContentForm></HomePageContentForm></PrivateRoute>
       },
       {
         path: "manage-gallery",
-        element: <ManagePhotoGallery></ManagePhotoGallery>
+        element: <PrivateRoute role={"admin"} ><ManagePhotoGallery></ManagePhotoGallery></PrivateRoute>
       },
       {
         path: "manage-office-hour",
-        element: <ManageOfficeHour></ManageOfficeHour>
+        element: <PrivateRoute role={"admin"} ><ManageOfficeHour></ManageOfficeHour></PrivateRoute>
       },
       {
         path: "manage-testimonial",
-        element: <ManageTestimonial></ManageTestimonial>
+        element: <PrivateRoute role={"admin"} ><ManageTestimonial></ManageTestimonial></PrivateRoute>
       },
       // banner related route
       {
         path: "upload-banner",
-        element: <CreateBanner></CreateBanner>
+        element: <PrivateRoute role={"admin"} ><CreateBanner></CreateBanner></PrivateRoute>
       },
 
       {
         path: "manage-banner",
-        element: <ManageBanner></ManageBanner>
+        element: <PrivateRoute role={"admin"} ><ManageBanner></ManageBanner></PrivateRoute>
       },
       {
         path: "banner-update/:id",
-        element: <BannerUpdate></BannerUpdate>
+        element: <PrivateRoute role={"admin"} ><BannerUpdate></BannerUpdate></PrivateRoute>
       },
       // packages slider routes
       {
         path: "upload-packages-slider",
-        element: <CreateSliderPackage></CreateSliderPackage>
+        element: <PrivateRoute role={"admin"} ><CreateSliderPackage></CreateSliderPackage></PrivateRoute>
       },
       {
         path: "manage-packages-slider",
-        element: <ManageSliderPackage></ManageSliderPackage>
+        element: <PrivateRoute role={"admin"} ><ManageSliderPackage></ManageSliderPackage></PrivateRoute>
       },
       {
         path: "update/:id",
-        element: <UpdateSliderPackage></UpdateSliderPackage>
+        element: <PrivateRoute role={"admin"} ><UpdateSliderPackage></UpdateSliderPackage></PrivateRoute>
       },
       // contact related routes
       {
         path: "contact-list",
-        element: <ManageContact></ManageContact>
+        element: <PrivateRoute role={"admin"} ><ManageContact></ManageContact></PrivateRoute>
       },
       // choose us related route
       {
         path: "choose-us-upload",
-        element: <WhyChooseUsCreate></WhyChooseUsCreate>
+        element: <PrivateRoute role={"admin"} ><WhyChooseUsCreate></WhyChooseUsCreate></PrivateRoute>
       },
       {
         path: "choose-us-list",
-        element: <WhyChooseUsManage></WhyChooseUsManage>
+        element: <PrivateRoute role={"admin"} ><WhyChooseUsManage></WhyChooseUsManage></PrivateRoute>
       },
       {
         path: "chooseUs-update/:id",
-        element: <WhyChooseUsUpdate></WhyChooseUsUpdate>
+        element: <PrivateRoute role={"admin"} ><WhyChooseUsUpdate></WhyChooseUsUpdate></PrivateRoute>
       }
 
     ]

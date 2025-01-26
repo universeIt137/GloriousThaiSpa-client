@@ -6,7 +6,7 @@ import { IoCartOutline, IoCloseCircleOutline } from 'react-icons/io5';
 import { MdLogout, MdMenuOpen, MdOutlineCategory, MdOutlineDiscount, MdOutlineLockPerson } from 'react-icons/md';
 import { RiAdminLine } from 'react-icons/ri';
 import { RxDashboard } from 'react-icons/rx';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { SiNginxproxymanager } from 'react-icons/si';
 import { GrDashboard } from "react-icons/gr";
 
@@ -28,6 +28,13 @@ const Sidebar = () => {
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
+
+    const navigate = useNavigate();
+
+    const handleLogOut = () => {
+        localStorage.clear();
+        navigate("/login")
+    }
 
 
     const packageUrls =
@@ -162,7 +169,7 @@ const Sidebar = () => {
 
 
                         <li className="mb-4 mx-3">
-                            <button onClick={() => signOut(auth)} className=' px-5 py-2 rounded-lg flex gap-1 items-center hover:bg-gray-200 hover:border-transparent transition-all duration-300 active:scale-90'> Log Out <MdLogout /></button>
+                            <button onClick={handleLogOut} className=' px-5 py-2 rounded-lg flex gap-1 items-center hover:bg-gray-200 hover:border-transparent transition-all duration-300 active:scale-90'> Log Out <MdLogout /></button>
                         </li>
                     </ul>
                 </nav>

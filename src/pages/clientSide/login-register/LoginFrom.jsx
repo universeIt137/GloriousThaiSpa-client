@@ -1,18 +1,65 @@
 import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { loginAlert } from "../../../helper/loginAlert";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
+    const axiosPublic = useAxiosPublic();
     const [passwordType, setPasswordType] = useState("password");
 
     const togglePasswordVisibility = () => {
         setPasswordType(passwordType === "password" ? "text" : "password");
     };
 
+    const [loading, setLoading] = useState(false)
+    const navigate = useNavigate()
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        const payload = {
+            email, password
+        };
+        try {
+            let resp = await loginAlert();
+            if (resp.isConfirmed) {
+                setLoading(true);
+                let res = await axiosPublic.post(`/user-login`, payload);
+                setLoading(false);
+                if (res) {
+                    localStorage.setItem("token", res.data?.token);
+                    localStorage.setItem("role", res.data?.role);
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "User login successfully",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    navigate("/dashboard")
+                    e.target.reset()
+                }
+
+            }
+        } catch (error) {
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "User login fail",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
+    }
+
     return (
         <div className="flex justify-center items-center min-h-screen bg-gray-100">
             <div className="w-full max-w-sm bg-white p-6 rounded-lg shadow-md">
                 <h2 className="text-2xl font-bold text-center text-gray-700 mb-6">Login</h2>
-                <form>
+                <form onSubmit={handleSubmit} >
                     <div className="mb-4">
                         <label
                             htmlFor="email"
@@ -45,14 +92,16 @@ const LoginForm = () => {
                             onClick={togglePasswordVisibility}
                             className="absolute inset-y-0 right-3 flex items-center text-gray-500"
                         >
-                            {passwordType === "password" ? <FaEyeSlash /> : <FaEye />}
+                            {passwordType === "password" ? <FaEyeSlash className="mt-6" /> : <FaEye className="mt-6" />}
                         </button>
                     </div>
                     <button
                         type="submit"
                         className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300"
                     >
-                        Login
+                        {
+                            loading ? "login...." : "Login"
+                        }
                     </button>
                 </form>
             </div>
