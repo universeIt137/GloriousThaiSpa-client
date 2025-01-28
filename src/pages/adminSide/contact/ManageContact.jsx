@@ -132,7 +132,7 @@ const ManageContact = () => {
                   {item?.status ? "Confirm" : "Not Confirmed"}
                 </td>
                 <td className="px-6 py-4">
-                  <button onClick={() => { deleteContactData(item?._id) }} className="px-4 py-2 text-sm font-medium  bg-blue-500 rounded-lg hover:bg-blue-700 transition">
+                  <button onClick={() => { deleteContactData(item?._id) }} className="px-4 py-2 text-sm font-medium  bg-blue-500 rounded-lg text-white hover:bg-blue-700 transition">
                     Delete
                   </button>
                 </td>

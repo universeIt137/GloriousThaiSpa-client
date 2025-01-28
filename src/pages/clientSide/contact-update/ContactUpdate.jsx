@@ -10,7 +10,7 @@ const ContactUpdate = () => {
     const handleSumbit = async (e) => {
         e.preventDefault();
 
-        const name = e.target.name.valuel;
+        const name = e.target.name.value;
         const email = e.target.email.value;
         const subject = e.target.subject.value;
         const message = e.target.message.value;
