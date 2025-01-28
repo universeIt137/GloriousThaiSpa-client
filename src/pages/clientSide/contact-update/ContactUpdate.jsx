@@ -58,10 +58,10 @@ const ContactUpdate = () => {
     return (
         <div>
             <div className="flex flex-col items-center justify-center bg-white my-4">
-                <h1 className="lg:text-4xl font-bold text-pink-500">
+                <h1 className="lg:text-4xl text-xl font-bold text-pink-500">
                     Contact <span className="text-blue-500">us!</span>
                 </h1>
-                <p className="lg:mt-4 text-[10px] lg:text-[16px] text-gray-600 text-justify max-w-2xl">
+                <p className="lg:mt-4 p-4 text-[14px] lg:text-[16px] text-gray-600 text-justify max-w-2xl">
                     At Pure Body Spa BD, we’re dedicated to providing you with the ultimate relaxation
                     experience. If you have any questions, concerns, or if you’d like to schedule an
                     appointment to unwind and rejuvenate, please don’t hesitate to get in touch with us.
@@ -81,13 +81,13 @@ const ContactUpdate = () => {
                             <h1 className="lg:text-4xl font-bold text-white mt-6">
                                 Feel free to drop us a line
                             </h1>
-                            <p className="text-white max-w-xl py-6 text-lg text-justify">
+                            <p className="text-white max-w-xl py-6 lg:text-lg text-justify">
                                 Feel free to reach out to us via phone or email, or simply use the convenient
                                 contact form below. We appreciate your interest in our services and look forward
                                 to helping you achieve tranquility and balance through our luxurious spa treatments.
                             </p>
                             <div>
-                                <p className="text-white max-w-xl py-6 text-lg text-justify">
+                                <p className="text-white max-w-xl py-6 lg:text-lg text-justify">
                                     Feel free to reach out to us via phone or email, or simply use the convenient
                                     contact form below. We appreciate your interest in our services and look forward
                                     to helping you achieve tranquility and balance through our luxurious spa treatments.
@@ -95,7 +95,7 @@ const ContactUpdate = () => {
                             </div>
                         </div>
                         {/* Right Content */}
-                        <div className="w-1/2" >
+                        <div className="lg:w-1/2" >
                             <form onSubmit={handleSumbit} className="rounded-lg">
                                 <div className="mb-4">
                                     <input
