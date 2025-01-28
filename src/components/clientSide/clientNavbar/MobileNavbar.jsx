@@ -1,15 +1,30 @@
-import React, { useState } from 'react';
-import { IoCloseCircleOutline } from 'react-icons/io5';
-import { TfiMenuAlt } from 'react-icons/tfi';
-import { NavLink } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { IoCloseCircleOutline, IoMenuSharp } from 'react-icons/io5';
+import { Link, NavLink } from 'react-router-dom';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-const MobileNavbar = ({name}) => {
+const MobileNavbar = ({ address }) => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+    const [isClosing, setIsClosing] = useState(false); // State for closing animation
     const [isGalleryOpen, setIsGalleryOpen] = useState(false);
 
     const toggleDrawer = () => {
-        setIsDrawerOpen(!isDrawerOpen);
+        if (isDrawerOpen) {
+            // Trigger closing animation before closing the drawer
+            setIsClosing(true);
+            setTimeout(() => {
+                setIsDrawerOpen(false);
+                setIsClosing(false); // Reset closing state
+            }, 500); // Match animation duration
+        } else {
+            setIsDrawerOpen(true);
+        }
     };
+
+    useEffect(() => {
+        AOS.init({ duration: 1000 }); // Initialize AOS with a duration of 1000ms
+    }, []);
 
     const toggleGalleryDropdown = () => {
         setIsGalleryOpen(!isGalleryOpen);
@@ -17,43 +32,58 @@ const MobileNavbar = ({name}) => {
 
     const routes = [
         { path: "/", name: "Home" },
-        { path: "/packages", name: "Packages" },
+        { path: "/packages", name: "Service" },
         { path: "/about", name: "About" },
         { path: "/contact", name: "Contact" },
-      ];
+        { path: "/gallery", name: "Gallery" }
+    ];
 
     return (
-        <div className='bg-white shadow-xl py-2 lg:py-0 px-4'>
+        <div className='bg-white shadow-xl py-4 lg:py-0 px-4'>
             <div className='flex lg:hidden items-center justify-between'>
-                {/* Logo */}
-                <div className='bg-white rounded-full p-1 shadow-2xl shadow-black'>
-                    <NavLink to="/">
-                        <img
-                            className='w-10 rounded-full'
-                            src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1730869312/11.%20SPA-Center/tanxlvp3dggfnhgkftnl.png"
-                            alt="Logo"
-                        />
-                    </NavLink>
-                </div>
-
-                <p className='text-[#DC2626] font-bold text-xl'>{ name }</p>
 
                 {/* Toggle Button for Mobile Devices */}
-                <button onClick={toggleDrawer} className='text-black'>
-                    <TfiMenuAlt size={24} className='font-bold' />
-                </button>
+                <div className="relative inline-flex items-center justify-center">
+                    {/* Spinner */}
+                    <span
+                        className="loading loading-ring absolute text-blue-900"
+                        style={{ width: "80px", height: "80px" }} // Adjust size here
+                    ></span>
+
+                    {/* Button */}
+                    <button
+                        onClick={toggleDrawer}
+                        className="text-gray-400 bg-[#e63232] p-3 rounded-full z-20 relative"
+                    >
+                        <IoMenuSharp size={24} className="font-bold" />
+                    </button>
+                </div>
+
+                {/* Logo */}
+                <div className='bg-white rounded-full p-1'>
+                    <Link className='lg:hidden' to={`/`}>
+                        <img
+                            className='w-56'
+                            src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1733913897/glorious_odbtow.png"
+                            alt=""
+                        />
+                    </Link>
+                </div>
             </div>
 
             {/* Drawer for Small Devices */}
             {isDrawerOpen && (
-                <div className='fixed inset-0 bg-opacity-50 z-50 lg:hidden'>
-                    <div className='absolute left-0 top-16 w-10/12 h-screen bg-green-400 text-white p-4'>
+                <div
+                    data-aos={isClosing ? "fade-up" : "fade-down"} // Apply closing or opening animation
+                    className='fixed inset-0 bg-opacity-50 z-50 lg:hidden'
+                >
+                    <div className='absolute left-0 top-0 w-full h-screen bg-[#e63232] text-white p-4'>
                         <div className="flex justify-end">
                             <button onClick={toggleDrawer} className='text-white'>
                                 <IoCloseCircleOutline size={32} />
                             </button>
                         </div>
-                        <ul className='mt-4 space-y-2'>
+                        <ul className='mt-4 space-y-2 text-center'>
                             {routes.map((route, index) => (
                                 <li key={index}>
                                     <NavLink
@@ -61,7 +91,7 @@ const MobileNavbar = ({name}) => {
                                         onClick={toggleDrawer}
                                         className={({ isActive }) =>
                                             isActive
-                                                ? 'block px-4 py-2 bg-green-500 text-white rounded-md font-medium'
+                                                ? 'block px-4 py-2 underline underline-offset-4 text-white rounded-md font-medium'
                                                 : 'block px-4 py-2 text-lg text-gray-100 hover:bg-green-600 hover:text-white rounded-md font-medium'
                                         }
                                     >
@@ -69,43 +99,6 @@ const MobileNavbar = ({name}) => {
                                     </NavLink>
                                 </li>
                             ))}
-                            
-                            {/* Additional dropdown for Gallery */}
-                            {/* <li>
-                                <button onClick={toggleGalleryDropdown} className='w-full text-left text-lg font-medium text-gray-100 hover:bg-green-600 hover:text-white px-4 py-2 rounded-md'>
-                                    Gallery
-                                </button>
-                                {isGalleryOpen && (
-                                    <ul className='ml-4 mt-2 space-y-2'>
-                                        <li>
-                                            <NavLink
-                                                to="/gallery/images"
-                                                onClick={toggleDrawer}
-                                                className={({ isActive }) =>
-                                                    isActive
-                                                        ? 'block px-4 py-2 bg-green-500 text-white rounded-md font-medium'
-                                                        : 'block px-4 py-2 text-gray-100 hover:bg-green-600 hover:text-white rounded-md font-medium'
-                                                }
-                                            >
-                                                Img Gallery
-                                            </NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink
-                                                to="/gallery/videos"
-                                                onClick={toggleDrawer}
-                                                className={({ isActive }) =>
-                                                    isActive
-                                                        ? 'block px-4 py-2 bg-green-500 text-white rounded-md font-medium'
-                                                        : 'block px-4 py-2 text-gray-100 hover:bg-green-600 hover:text-white rounded-md font-medium'
-                                                }
-                                            >
-                                                Video Gallery
-                                            </NavLink>
-                                        </li>
-                                    </ul>
-                                )}
-                            </li> */}
                         </ul>
                     </div>
                 </div>
