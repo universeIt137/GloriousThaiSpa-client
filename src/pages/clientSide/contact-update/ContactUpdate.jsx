@@ -1,6 +1,60 @@
-import React from "react";
+import React, { useState } from "react";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import { createAlert } from "../../../helper/createAlert";
+import Swal from "sweetalert2";
 
 const ContactUpdate = () => {
+    const axiosPublic = useAxiosPublic();
+    const [loading, setLoading] = useState(false);
+
+    const handleSumbit = async (e) => {
+        e.preventDefault();
+
+        const name = e.target.name.valuel;
+        const email = e.target.email.value;
+        const subject = e.target.subject.value;
+        const message = e.target.message.value;
+        const phone = e.target.phone.value;
+
+        const payload = {
+            name, email, subject, message, phone,
+        };
+
+
+
+        try {
+            const resp = await createAlert();
+            if (resp.isConfirmed) {
+
+                setLoading(true);
+                let res = await axiosPublic.post(`/contact`, payload);
+                setLoading(false);
+                if (res) {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Your work has been saved",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    e.target.reset()
+                }
+
+            }
+        } catch (error) {
+            setLoading(false);
+            Swal.fire({
+                position: "top-end",
+                icon: "fail",
+                title: "Something went wrong",
+                showConfirmButton: false,
+                timer: 1500
+            });
+
+        }
+
+
+    }
     return (
         <div>
             <div className="flex flex-col items-center justify-center bg-white my-4">
@@ -16,7 +70,7 @@ const ContactUpdate = () => {
             </div>
             <div className="bg-blue-600 py-12">
                 <div className="w-11/12 mx-auto">
-                    <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+                    <div className="flex flex-col lg:flex-row  justify-between gap-8">
                         {/* Left Content */}
                         <div>
                             <img
@@ -42,11 +96,12 @@ const ContactUpdate = () => {
                         </div>
                         {/* Right Content */}
                         <div className="w-1/2" >
-                            <form className="rounded-lg">
+                            <form onSubmit={handleSumbit} className="rounded-lg">
                                 <div className="mb-4">
                                     <input
                                         type="text"
                                         placeholder="Name"
+                                        name="name"
                                         aria-label="Name"
                                         className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     />
@@ -56,6 +111,16 @@ const ContactUpdate = () => {
                                         type="email"
                                         placeholder="Email"
                                         aria-label="Email"
+                                        name="email"
+                                        className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    />
+                                </div>
+                                <div className="mb-4">
+                                    <input
+                                        type="text"
+                                        placeholder="Phone Number"
+                                        aria-label="phone"
+                                        name="phone"
                                         className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     />
                                 </div>
@@ -64,6 +129,7 @@ const ContactUpdate = () => {
                                         type="text"
                                         placeholder="Subject"
                                         aria-label="Subject"
+                                        name="subject"
                                         className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     />
                                 </div>
@@ -71,6 +137,7 @@ const ContactUpdate = () => {
                                     <textarea
                                         placeholder="Message"
                                         aria-label="Message"
+                                        name="message"
                                         className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-32"
                                     ></textarea>
                                 </div>
@@ -78,7 +145,9 @@ const ContactUpdate = () => {
                                     type="submit"
                                     className="w-full bg-[#e63232] text-white font-bold py-3 px-4 rounded-lg transition duration-300"
                                 >
-                                    Send Message
+                                    {
+                                        loading ? "Message Sending..." : "Send Message"
+                                    }
                                 </button>
                             </form>
                         </div>
