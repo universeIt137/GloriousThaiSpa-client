@@ -17,15 +17,14 @@ const ManageUser = () => {
             Authorization: token,
         },
     };
-    const {
-        data: users = [], isLoading, isError, refetch, } = useQuery({
-            queryKey: ["users"],
+    const { data: users = [], isLoading, isError, refetch, } = useQuery({
+        queryKey: ["users"],
 
-            queryFn: async () => {
-                const res = await axiosPublic.get("/user", config);
-                return res.data;
-            },
-        });
+        queryFn: async () => {
+            const res = await axiosPublic.get("/user", config);
+            return res.data;
+        },
+    });
     const onUpdate = (id) => {
         navigate(`/dashboard/user-update/${id}`)
     };
@@ -108,7 +107,7 @@ const ManageUser = () => {
                                 <td onClick={() => roleUpdate(user?._id)} className="px-4 cursor-pointer py-2 border-b">{user.role}</td>
                                 <td className="px-4 py-2 border-b">
                                     <div className="flex justify-center gap-4">
-                                        
+
                                         <button
                                             onClick={() => onDelete(user._id)}
                                             className="text-red-600 hover:text-red-800"

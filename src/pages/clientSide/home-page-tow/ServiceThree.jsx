@@ -1,39 +1,57 @@
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel CSS
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 const ServiceThree = () => {
     // Services data stored in a variable
-    const services = [
-        {
-            id: 1,
-            title: "Sensual Massage",
-            description: "Start from 7000 Taka",
-            priceRange: "Range: 7000 - 14000 Taka",
-            image: "https://res.cloudinary.com/dnvmj9pvk/image/upload/v1731309165/ts2ku7vuccyc1pfqy1vp.jpg", // Replace with actual image URL
+    // const services = [
+    //     {
+    //         id: 1,
+    //         title: "Sensual Massage",
+    //         description: "Start from 7000 Taka",
+    //         priceRange: "Range: 7000 - 14000 Taka",
+    //         image: "https://res.cloudinary.com/dnvmj9pvk/image/upload/v1731309165/ts2ku7vuccyc1pfqy1vp.jpg", // Replace with actual image URL
+    //     },
+    //     {
+    //         id: 2,
+    //         title: "Hot Stone Massage",
+    //         description: "Start from 8000 Taka",
+    //         priceRange: "Range: 8000 - 15000 Taka",
+    //         image: "https://res.cloudinary.com/dnvmj9pvk/image/upload/v1731307695/tytwyido3ulk4fwqxect.jpg", // Replace with actual image URL
+    //     },
+    //     {
+    //         id: 3,
+    //         title: "Swedish Massage",
+    //         description: "Start from 6000 Taka",
+    //         priceRange: "Range: 6000 - 12000 Taka",
+    //         image: "https://res.cloudinary.com/dnvmj9pvk/image/upload/v1731309165/ts2ku7vuccyc1pfqy1vp.jpg", // Replace with actual image URL
+    //     },
+    // ];
+
+    const axiosPublic = useAxiosPublic()
+
+    const {
+        data: services = [],
+        isLoading,
+        isError,
+        refetch,
+    } = useQuery({
+        queryKey: ["services"],
+
+        queryFn: async () => {
+            const res = await axiosPublic.get("/package-slider");
+            return res.data;
         },
-        {
-            id: 2,
-            title: "Hot Stone Massage",
-            description: "Start from 8000 Taka",
-            priceRange: "Range: 8000 - 15000 Taka",
-            image: "https://res.cloudinary.com/dnvmj9pvk/image/upload/v1731307695/tytwyido3ulk4fwqxect.jpg", // Replace with actual image URL
-        },
-        {
-            id: 3,
-            title: "Swedish Massage",
-            description: "Start from 6000 Taka",
-            priceRange: "Range: 6000 - 12000 Taka",
-            image: "https://res.cloudinary.com/dnvmj9pvk/image/upload/v1731309165/ts2ku7vuccyc1pfqy1vp.jpg", // Replace with actual image URL
-        },
-    ];
+    });
 
     return (
         <div className="my-5" >
             <div
                 className="min-h-screen  bg-cover bg-center text-white "
                 style={{
-                    width : "100%",
+                    width: "100%",
                     backgroundImage: "url('https://res.cloudinary.com/dnvmj9pvk/image/upload/v1732953822/spa-banner-16_mzxjix.png')", // Replace with your background image URL
                 }}
             >
@@ -56,7 +74,7 @@ const ServiceThree = () => {
                                 massage. Our facial treatments are designed to leave your skin
                                 radiant and refreshed, using only the finest natural ingredients.
                             </p>
-                            <button className="lg:px-6 px-3 py-2 lg:text-[16px] text-[12px] lg:py-3 mt-2 lg:mt-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg font-bold shadow-lg transition transform hover:scale-105">
+                            <button className="lg:px-6 px-3 py-2 lg:text-[16px] text-[12px] lg:py-3 mt-2 lg:mt-0 bg-[#e63232] rounded-lg font-bold shadow-lg transition transform hover:scale-105">
                                 View all Services
                             </button>
                         </div>
@@ -79,7 +97,7 @@ const ServiceThree = () => {
                                             <h3 className="lg:text-2xl font-bold">{service.title}</h3>
                                             <p className="lg:mt-2 lg:text-[16px] text-[10px] ">{service.description}</p>
                                             <p className=" lg:text-[16px] text-[12px] " >{service.priceRange}</p>
-                                            <button className="lg:mt-4 mt-2 lg:px-4 p-1 text-[10px] lg:text-[16px] lg:py-2 bg-yellow-500 text-black rounded-lg shadow-md hover:bg-yellow-600">
+                                            <button className="lg:mt-4 mt-2 lg:px-4 p-1 text-[10px] lg:text-[16px] lg:py-2 bg-[#e63232] text-white font-semibold rounded-lg shadow-md ">
                                                 Select This
                                             </button>
                                         </div>

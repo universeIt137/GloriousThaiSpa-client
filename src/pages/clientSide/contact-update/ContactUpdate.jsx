@@ -76,7 +76,7 @@ const ContactUpdate = () => {
                                 </div>
                                 <button
                                     type="submit"
-                                    className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300"
+                                    className="w-full bg-[#e63232] text-white font-bold py-3 px-4 rounded-lg transition duration-300"
                                 >
                                     Send Message
                                 </button>

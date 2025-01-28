@@ -77,7 +77,7 @@ const Package = () => {
                     {/* Previous Button */}
                     <button
                         onClick={handlePrev}
-                        className="absolute left-0 bg-purple-700 text-white p-2 rounded-full hover:bg-purple-800 z-10"
+                        className="absolute left-0 bg-[#e63232] text-white p-2 rounded-full hover:bg-[#e63232] z-10"
                     >
                         <FaChevronLeft />
                     </button>
@@ -102,7 +102,7 @@ const Package = () => {
                                         </p>
                                     ))}
                                 </div>
-                                <button className="mt-4 w-full bg-gray-800 text-white py-2 rounded-md hover:bg-gray-700">
+                                <button className="mt-4 w-full bg-[#e63232] text-white py-2 rounded-md hover:bg-[#e63232]">
                                     Book Now
                                 </button>
                             </div>
@@ -112,7 +112,7 @@ const Package = () => {
                     {/* Next Button */}
                     <button
                         onClick={handleNext}
-                        className="absolute right-0 bg-purple-700 text-white p-2 rounded-full hover:bg-purple-800 z-10"
+                        className="absolute right-0 bg-[#e63232] text-white p-2 rounded-full hover:bg-[#e63232] z-10"
                     >
                         <FaChevronRight />
                     </button>

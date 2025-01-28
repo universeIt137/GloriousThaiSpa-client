@@ -1,5 +1,7 @@
+import { useQuery } from "@tanstack/react-query";
 import { useState, useEffect } from "react";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 const carouselItems = [
     {
@@ -22,7 +24,17 @@ const carouselItems = [
 ];
 
 const BannerTow = () => {
+    const axiosPublic = useAxiosPublic()
     const [currentIndex, setCurrentIndex] = useState(0);
+
+    const { data: carouselItems = [], isLoading, isError, refetch, } = useQuery({
+        queryKey: ["carouselItems"],
+
+        queryFn: async () => {
+            const res = await axiosPublic.get("/banner",);
+            return res.data;
+        },
+    });
 
     const handleNext = () => {
         setCurrentIndex((prevIndex) =>
@@ -50,7 +62,7 @@ const BannerTow = () => {
             {carouselItems.length > 0 && (
                 <div
                     className="relative py-8 lg:py-0 w-full h-[100vh] flex items-center justify-center bg-cover bg-center transition-all duration-500"
-                    style={{ backgroundImage: `url(${carouselItems[currentIndex]?.image})` }}
+                    style={{ backgroundImage: `url(${carouselItems[currentIndex]?.bannerImg})` }}
                 >
                     {/* Overlay */}
                     {/* <div className="absolute inset-0 bg-black bg-opacity-50"></div> */}
@@ -78,7 +90,7 @@ const BannerTow = () => {
                                 <a
                                     href="#"
                                     title="Get quote now"
-                                    className="relative inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all duration-200 bg-gray-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                                    className="relative inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all duration-200 bg-[#E63232] rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
                                     role="button"
                                 >
                                     Know More
@@ -98,7 +110,7 @@ const BannerTow = () => {
                         </div>
                     </div>
 
-                    
+
                 </div>
             )}
         </div>

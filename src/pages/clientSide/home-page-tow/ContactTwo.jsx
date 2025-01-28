@@ -27,7 +27,7 @@ const ContactTwo = () => {
             {/* Contact Cards */}
             <div className="space-y-4 mt-8">
                 {/* Call Us Section */}
-                <div className="flex items-center bg-pink-500 rounded-lg shadow-lg text-white">
+                <div className="flex items-center bg-[#e63232] rounded-lg shadow-lg text-white">
                     <div className="bg-purple-900 p-4 flex items-center justify-center rounded-l-lg">
                         <FaPhoneAlt className="text-2xl" aria-label="Phone Icon" />
                     </div>
@@ -38,7 +38,7 @@ const ContactTwo = () => {
                 </div>
 
                 {/* Address Section */}
-                <div className="flex items-center bg-pink-500 rounded-lg shadow-lg text-white">
+                <div className="flex items-center bg-[#e63232] rounded-lg shadow-lg text-white">
                     <div className="bg-purple-900 p-4 flex items-center justify-center rounded-l-lg">
                         <FaHome className="text-2xl" aria-label="Home Icon" />
                     </div>

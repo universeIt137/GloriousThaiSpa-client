@@ -72,7 +72,7 @@ const UpdatePackages = () => {
             />
 
             {/* Details */}
-            <div className="p-4 bg-[#2563EB] text-white">
+            <div className="p-4 bg-[#e63232] text-white">
               <h3 className="text-xl font-bold text-center">{massage?.title}</h3>
 
               {/* Rating */}

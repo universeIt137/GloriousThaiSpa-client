@@ -55,8 +55,8 @@ const Visite = () => {
                         <div>
                             <div className=" rounded-lg  overflow-hidden -mt-12 lg:-mt-0 lg:w-[450px]">
                                 {/* Header */}
-                                <div className="bg-pink-500  text-center py-3 lg:py-4">
-                                    <h2 className="lg:text-lg text-[11px] font-bold">Visit Us</h2>
+                                <div className="bg-[#e63232]  text-center py-3 lg:py-4">
+                                    <h2 className="lg:text-lg text-[11px] text-white font-bold">Visit Us</h2>
                                 </div>
                                 {/* Days and Timings */}
                                 <div className="lg:p-4 p-3 space-y-4  ">
@@ -64,7 +64,7 @@ const Visite = () => {
                                         officeHour && officeHour?.map((item, i) => {
                                             return (
                                                 <div key={i} >
-                                                    <div className="flex justify-between items-center bg-white  text-black rounded-lg lg:p-6 p-3 shadow-md">
+                                                    <div className="flex justify-between items-center text-white  bg-[#e63232] rounded-lg lg:p-6 p-3 shadow-md">
                                                         <span className="lg:text-xl text-[11px] font-semibold ">{item?.day}</span>
                                                         <span className="lg:text-xl text-[11px] font-semibold ">{item?.time}</span>
                                                     </div>

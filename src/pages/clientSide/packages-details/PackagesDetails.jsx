@@ -65,7 +65,7 @@ const PackagesDetails = () => {
                                 {pkg?.durations?.map((duration, index) => (
                                     <li key={index} className="flex justify-between items-center text-gray-700">
                                         <span className="text-lg text-black">{duration?.time} Minutes</span>
-                                        <span className="text-lg font-bold text-[#2563EB]">{duration?.price} Tk</span>
+                                        <span className="text-lg font-bold text-[#e63232]">{duration?.price} Tk</span>
                                     </li>
                                 ))}
                             </ul>
@@ -73,7 +73,7 @@ const PackagesDetails = () => {
 
                         {/* Book Now Button */}
                         <div className="mt-8">
-                            <button className="bg-[#2563EB] text-white py-3 px-6 rounded-lg text-lg w-full md:w-auto">
+                            <button className="bg-[#e63232] text-white py-3 px-6 rounded-lg text-lg w-full md:w-auto">
                                 <Link to={`/book-now/${pkg._id}`}>
                                     Book Now
                                 </Link>
