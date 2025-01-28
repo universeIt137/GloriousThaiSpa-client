@@ -96,21 +96,17 @@ const Sidebar = () => {
             <NavigationItem to="/dashboard/manageStudentGallary" icon={SiNginxproxymanager} label="Manage Student Gallary" />
         </>
 
-    const requestUrls =
-        <>
-            <NavigationItem to="/dashboard/admissionRequest" icon={FaFileWaveform} label="Admission Requests" />
-            <NavigationItem to="/dashboard/seminar" icon={FaUsers} label="Seminar Requests" />
-        </>
-
-    const seminarUrls =
-        <>
-            <NavigationItem to="/dashboard/createSeminar" icon={MdAddCircle} label="Create Seminar" />
-            <NavigationItem to="/dashboard/manageSeminar" icon={SiNginxproxymanager} label="Manage Seminar" />
-        </>
 
     const user =
         <>
             <NavigationItem to="/dashboard/user-list" icon={MdAddCircle} label="Manage User" />
+        </>
+
+
+    const whyChoose =
+        <>
+            <NavigationItem to="/dashboard/upload-why-choose-us" icon={MdAddCircle} label="Upload Why Us" />
+            <NavigationItem to="/dashboard/manage-why-choose-us" icon={MdAddCircle} label="Manage Why Us" />
         </>
 
 
@@ -182,11 +178,11 @@ const Sidebar = () => {
 
 
                         <li className="mb-4 mx-3">
-                            <Dropdown buttonText="Why Choose Us" urls={chooseUs} />
+                            <Dropdown buttonText="Manage User" urls={user} />
                         </li>
 
                         <li className="mb-4 mx-3">
-                            <Dropdown buttonText="Manage User" urls={user} />
+                            <Dropdown buttonText="Manage Why Choose Us" urls={whyChoose} />
                         </li>
 
 

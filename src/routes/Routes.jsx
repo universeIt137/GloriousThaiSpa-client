@@ -186,11 +186,11 @@ const router = createBrowserRouter([
       },
       // choose us related route
       {
-        path: "choose-us-upload",
+        path: "upload-why-choose-us",
         element: <PrivateRoute role={"admin"} ><WhyChooseUsCreate></WhyChooseUsCreate></PrivateRoute>
       },
       {
-        path: "choose-us-list",
+        path: "manage-why-choose-us",
         element: <PrivateRoute role={"admin"} ><WhyChooseUsManage></WhyChooseUsManage></PrivateRoute>
       },
       {

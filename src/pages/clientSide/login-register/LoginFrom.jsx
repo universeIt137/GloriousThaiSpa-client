@@ -3,7 +3,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { loginAlert } from "../../../helper/loginAlert";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
     const axiosPublic = useAxiosPublic();
@@ -103,6 +103,7 @@ const LoginForm = () => {
                             loading ? "login...." : "Login"
                         }
                     </button>
+                    <Link className="block mt-2" to={`/registration`}>You Have No Account? Please ! <span className="hover:underline" >Registration</span> </Link>
                 </form>
             </div>
         </div>
